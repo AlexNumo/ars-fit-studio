@@ -91,14 +91,14 @@ const userSlice = createSlice({
       state.telegramBot.phoneNumber = user?.telegramBot?.phoneNumber || 'Відсутні дані';
       state.telegramBot.isTrainingReminderSent = user?.telegramBot?.phoneNumber?.length > 0 ? true : false;
       
-      state.trainings.visit = filterVisitTrainings(user.trainings) || 0;
+      state.trainings.visit = user?.trainings?.length > 0 ? filterVisitTrainings(user.trainings) : state.trainings.visit;
 
       // state.seasonTickets.allUnique = countUniqueTrainingsSubscription(state.trainings.visit) || 'Відсутні дані';
       
       state.trainings.nonVisit = user?.trainings?.length ? filterNonVisitTrainings(user.trainings) : 0;
       state.trainings.all = user?.trainings || 0;
-      state.trainings.allUnique = countUniqueTrainings(user.trainings) || 0;
-      state.trainings.popular = filterMostPopularTrainings(user.trainings) || 0;
+      state.trainings.allUnique = user?.trainings?.length > 0 ? countUniqueTrainings(user.trainings) : 0;
+      state.trainings.popular = user?.trainings?.length > 0 ? filterMostPopularTrainings(user.trainings) : 0;
       state.version = user?.updateUser || 1.0;
       state.isAuthenticated = user ? true : false;
     },
