@@ -22,7 +22,7 @@ const VisibleTrainings = ({ trainings }) => {
             <ListTraining key={item._id}>
               <p>{formatDate(item.date)}</p>
               <p>{item.time}</p>
-              <p>{item.kind_trainee}</p>
+              <p>{item.kind_training}</p>
             </ListTraining>
       )
       })}

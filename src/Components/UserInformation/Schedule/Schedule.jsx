@@ -5,17 +5,19 @@ import {
   RecordBTN,
   Title
 } from './Schedule.styled';
-import schedule from '../../../assets/schedule.json';
-import { useState } from 'react';
-import {ModalView} from '../../ModalView/ModalView';
+// import schedule from '../../../assets/schedule.json';
+import { useState, useEffect } from 'react';
+import { ModalView } from '../../ModalView/ModalView';
+import { scheduleAPI } from "../../../service/axios.schedule";
 
 const Schedule = () => {
   const user = useSelector((state) => state.user);
+  const [scheduleData, setScheduleData] = useState([]);
   const [userID, setUserID] = useState();
   const [name_Coach, setName_Coach] = useState();
   const [time, setTime] = useState();
   const [day, setDay] = useState();
-  const [kind_trainee, setKind_trainee] = useState();
+  const [kind_training, setKind_training] = useState();
   const [show, setShow] = useState(false);
   const [selectedDay, setSelectedDay] = useState('');
   const handleClose = () => { return setShow(false) };
@@ -55,20 +57,32 @@ const Schedule = () => {
     return threeDays;
   };
 
-  const reformedSchedule = reformSchedule(schedule);
+  const getDataSchedule = async () => {
+    return await scheduleAPI.OnGetAllSchedule();
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getDataSchedule();
+      setScheduleData(Array.isArray(result) ? result : []);
+    };
+    fetchData();
+  }, []);
+
+  const reformedSchedule = reformSchedule(scheduleData);
   const scheduleToday = reformedSchedule.Day1;
   const scheduleTomorrow = reformedSchedule.Day2;
   const scheduleDayAfterTomorrow = reformedSchedule.Day3;
 
-  const handleRecordTraining = (userID, name_Coach, time, day, kind_trainee, dayInfo) => {
-    if (kind_trainee === '-') {
+  const handleRecordTraining = (userID, name_Coach, time, day, kind_training, dayInfo) => {
+    if (kind_training === '-') {
       return null;
     }
     setUserID(userID);
     setName_Coach(name_Coach);
     setTime(time);
     setDay(day);
-    setKind_trainee(kind_trainee);
+    setKind_training(kind_training);
     setShow(true);
     setSelectedDay(dayInfo);
   }
@@ -84,7 +98,7 @@ const Schedule = () => {
           name_Coach={name_Coach}
           time={time}
           day={day}
-          kind_trainee={kind_trainee}
+          kind_training={kind_training}
           selectedDay={selectedDay}
         />}
         <div>
@@ -93,9 +107,9 @@ const Schedule = () => {
             <div key={time}>
               {scheduleToday[time] && scheduleToday[time].map((item, index) => (
                 <RecordBTN
-                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_trainee, 'today')}
+                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training, 'today')}
                   key={index}>
-                  {item.kind_trainee !== '-' ? `${item.kind_trainee} ${item.time}` : item.kind_trainee}
+                  {item.kind_training !== '-' ? `${item.kind_training} ${item.time}` : item.kind_training}
                 </RecordBTN>
               ))}
             </div>
@@ -108,9 +122,9 @@ const Schedule = () => {
             <div key={time}>
               {scheduleTomorrow[time].map((item, index) => (
                 <RecordBTN
-                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_trainee, 'tomorrow')}
+                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training, 'tomorrow')}
                   key={index}>
-                  {item.kind_trainee !== '-' ? `${item.kind_trainee} ${item.time}` : item.kind_trainee}
+                  {item.kind_training !== '-' ? `${item.kind_training} ${item.time}` : item.kind_training}
                 </RecordBTN>
               ))}
             </div>
@@ -122,9 +136,9 @@ const Schedule = () => {
             <div key={time}>
               {scheduleDayAfterTomorrow[time].map((item, index) => (
                 <RecordBTN
-                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_trainee, 'aftertomorrow')}
+                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training, 'aftertomorrow')}
                   key={index}>
-                  {item.kind_trainee !== '-' ? `${item.kind_trainee} ${item.time}` : item.kind_trainee}
+                  {item.kind_training !== '-' ? `${item.kind_training} ${item.time}` : item.kind_training}
                 </RecordBTN>
               ))}
             </div>

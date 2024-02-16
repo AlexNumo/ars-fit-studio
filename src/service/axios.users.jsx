@@ -120,19 +120,20 @@ export const OnRecordTraining = async (userData) => {
   // console.log(userData)
   try {
     const res = await serverAPI.post(`/user/signUpTraining`, userData);
-    console.log(res)
-    if (res.data.messages.error && res.data.messages.error !== 'Повторний запис на тренування') {
+    // console.log(res)
+    if (res.data.messages.error && res.data.messages.error === 'Кількість тренувань по абонементу закінчилася. Ви записані як на разове заняття') {
         toast.warning(`${res.data.messages.error}`);
       return res;
     } else if (res.data.messages.error === 'Повторний запис на тренування') {
         toast.error('Повторний запис на тренування');
-      return res.data.error;
+      return res.data;
     } else {
         toast.success('Ви успішно записалися на тренування');
       return res;
     }
   } catch (e) {
     toast.error('Щось пішло не так');
+    console.log(e);
   }
 };
 
@@ -150,10 +151,10 @@ export const OnGetCoachTrainings = async (coachLabel) => {
 };
 // OnSendVisitTraining
 export const OnSendVisitTraining = async (trainingInfo) => {
-  // console.log(trainingInfo);
+  console.log(trainingInfo);
   try {
     const result = await serverAPI.post(`/user/coach/visit`, trainingInfo);
-    // console.log(coachLabel);
+    console.log(result);
     if (result.data) {
       toast.info(result.data);
     }

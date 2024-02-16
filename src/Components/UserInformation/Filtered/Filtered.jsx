@@ -8,37 +8,37 @@ export const formatDate = (isoDate) => {
   
 export const filterVisitTrainings = (infoArray) => {
   // console.log(infoArray)
-  return infoArray.filter(item => item.visitTrainee === true);
+  return infoArray.filter(item => item.visitTraining === true);
 };
   
 export const filterNonVisitTrainings = (infoArray) => {
-  return infoArray.filter(item => item.visitTrainee === false);
+  return infoArray.filter(item => item.visitTraining === false);
 };
 
 export const filterMostPopularTrainings = (infoArray) => {
-  if (infoArray.length === 1 && infoArray[0].visitTrainee === true) {
-    const mostPopular = infoArray[0].kind_trainee;
+  if (infoArray.length === 1 && infoArray[0].visitTraining === true) {
+    const mostPopular = infoArray[0].kind_training;
     return mostPopular;
   }
     const trainingCounts = {};
     infoArray.forEach(item => {
-      if (item.visitTrainee === true) {
-        const kindTrainee = item.kind_trainee;
-        if (kindTrainee in trainingCounts) {
-          trainingCounts[kindTrainee] += 1;
+      if (item.visitTraining === true) {
+        const kindTraining = item.kind_training;
+        if (kindTraining in trainingCounts) {
+          trainingCounts[kindTraining] += 1;
         } else {
-          trainingCounts[kindTrainee] = 1;
+          trainingCounts[kindTraining] = 1;
         }
       }
     });
     let maxCount = 0;
     let mostPopularTrainings = [];
-    for (const kindTrainee in trainingCounts) {
-      if (trainingCounts[kindTrainee] > maxCount) {
-        maxCount = trainingCounts[kindTrainee];
-        mostPopularTrainings = [kindTrainee];
-      } else if (trainingCounts[kindTrainee] === maxCount) {
-        mostPopularTrainings.push(kindTrainee);
+    for (const kindTraining in trainingCounts) {
+      if (trainingCounts[kindTraining] > maxCount) {
+        maxCount = trainingCounts[kindTraining];
+        mostPopularTrainings = [kindTraining];
+      } else if (trainingCounts[kindTraining] === maxCount) {
+        mostPopularTrainings.push(kindTraining);
       }
     }
     return mostPopularTrainings.join(", ");
@@ -51,8 +51,8 @@ export const countUniqueTrainings = (data) => {
   const uniqueTrainings = {};
 
   data.forEach((item) => {
-    if (item.visitTrainee) {
-      const trainingKey = item.kind_trainee;
+    if (item.visitTraining) {
+      const trainingKey = item.kind_training;
 
       if (!uniqueTrainings[trainingKey]) {
         uniqueTrainings[trainingKey] = [item];
@@ -74,7 +74,7 @@ export const findClientWithMostVisits = (data) => {
   let maxVisits = 0;
 
   data.forEach((client, index) => {
-    const visits = client.info.filter((item) => !item.canceledTraining && item.visitTrainee).length;
+    const visits = client.info.filter((item) => !item.canceledTraining && item.visitTraining).length;
 
     if (visits > maxVisits) {
       maxVisits = visits;
@@ -93,12 +93,12 @@ export const countUniqueTrainingsSubscription = (data) => {
     // console.log("GOOD")
     return null;
   }
-  const fiteredData = data.filter(item => item.visitTrainee === true && item.idTraining !== "without seasonTickets")
+  const fiteredData = data.filter(item => item.visitTraining === true && item.idTraining !== "without seasonTickets")
   const uniqueTrainings = {};
 
   fiteredData.forEach((item) => {
     // console.log(item);
-    const trainingKey = item.visitTrainee === true ? item.kind_trainee : '';
+    const trainingKey = item.visitTraining === true ? item.kind_training : '';
     // console.log(trainingKey);
 
     if (!uniqueTrainings[trainingKey]) {

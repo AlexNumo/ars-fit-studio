@@ -17,12 +17,12 @@ const LoveTrainings = () => {
   const [name_Coach, setName_Coach] = useState();
   const [time, setTime] = useState();
   const [day, setDay] = useState();
-  const [kind_trainee, setKind_trainee] = useState();
+  const [kind_training, setKind_training] = useState();
 
   const handleClose = () => { return setShow(false) };
 
   const favoriteTrainingsUser = (schedule, popular) => {
-    const filterTrainings = schedule.filter((item) => item.kind_trainee !== '-' && item.kind_trainee === popular);
+    const filterTrainings = schedule.filter((item) => item.kind_training !== '-' && item.kind_training === popular);
     const reformDayOfWeek = () => {
       const today = new Date().getDay();
       const dayOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
@@ -62,7 +62,7 @@ const LoveTrainings = () => {
     )
   }
 
-  const handleRecordTraining = (userID, name_Coach, time, day, kind_trainee) => {
+  const handleRecordTraining = (userID, name_Coach, time, day, kind_training) => {
     // const currentDate = new Date();
     // const timeZone = 'Europe/Kiev';
     // const localTime = new Intl.DateTimeFormat('en-US', { timeZone }).format(currentDate);
@@ -70,16 +70,16 @@ const LoveTrainings = () => {
     // const minutes = currentDate.getMinutes();
     // const timeRecord = localTime + hours + minutes;
 
-    if (kind_trainee === '-') {
+    if (kind_training === '-') {
       return null;
     }
 
-    console.log(userID, name_Coach, time, day, kind_trainee)
+    console.log(userID, name_Coach, time, day, kind_training)
     setUserID(userID);
     setName_Coach(name_Coach);
     setTime(time);
     setDay(day);
-    setKind_trainee(kind_trainee);
+    setKind_training(kind_training);
     setShow(true)
   }
   // console.log(user.trainings.visit.length)
@@ -100,7 +100,7 @@ const LoveTrainings = () => {
         name_Coach={name_Coach}
         time={time}
         day={day}
-        kind_trainee={kind_trainee}
+        kind_training={kind_training}
       />}
       {user.trainings.visit?.length === 0 || user.trainings.visit.length === undefined ? <NonLoveTraining />
         :
@@ -112,10 +112,10 @@ const LoveTrainings = () => {
             <p>Сьогодні</p>
             {todayTrainings.length > 0 ? todayTrainings.map((item, index) => (
               <RecordBTN
-                onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_trainee)}
+                onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training)}
                 key={index}
               >
-                {item.kind_trainee}&nbsp;
+                {item.kind_training}&nbsp;
                 {item.time}
               </RecordBTN>
             )) : <NonTrainings />}
@@ -127,10 +127,10 @@ const LoveTrainings = () => {
             <p>Завтра</p>
             {tomorrowTrainings.length > 0 ? tomorrowTrainings.map((item, index) => (
               <RecordBTN
-                onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_trainee)}
+                onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training)}
                 key={index}
               >
-                {item.kind_trainee}&nbsp;
+                {item.kind_training}&nbsp;
                 {item.time}
               </RecordBTN>
             )) : <NonTrainings />}

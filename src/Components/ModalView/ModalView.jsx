@@ -84,7 +84,7 @@ export const ModalView = ({
   name_Coach,
   time,
   day,
-  kind_trainee,
+  kind_training,
   selectedDay
 }) => {
   const user = useSelector((state) => state.user);
@@ -125,7 +125,7 @@ export const ModalView = ({
       kind: 'group',
       time: time,
       day: day,
-      kind_trainee: kind_trainee,
+      kind_training: kind_training,
       date: selectedDateValue
     };
 
@@ -161,7 +161,7 @@ export const ModalView = ({
                   </ModalHeader>
                   <div>
                     <p>
-                      {kind_trainee} об {time} в {translateDay(day)}
+                      {kind_training} об {time} в {translateDay(day)}
                     </p>
                   </div>
                   <WrapperBTN>
@@ -174,7 +174,7 @@ export const ModalView = ({
                 <ModalHeader>
                   <BoldIcon size={45} color='green' />
                     <h3>Вітаємо!</h3>
-                    <p>Ви успішно записалися на тренування {completeRecordData.kind_trainee} в {translateDay(completeRecordData.day)} об {completeRecordData.time} до тренера {completeRecordData.coach} </p>
+                    <p>Ви успішно записалися на тренування {completeRecordData.kind_training} в {translateDay(completeRecordData.day)} об {completeRecordData.time} до тренера {completeRecordData.coach} </p>
                   <CloseBTN onClick={handleClose}>&times;</CloseBTN>
                 </ModalHeader>
               </>}
@@ -491,7 +491,7 @@ export const ModalViewCoachSalary = ({
               {Object.entries(dataCoachTrainings).map(([key, value], index) => (
                 <WrapperCoachTrainings key={key}>
                   <p>Дата: {new Date(value.training.date).toLocaleDateString('uk-UA')}</p>
-                  <p>Вид тренування: {value.training.kind_trainee}</p>
+                  <p>Вид тренування: {value.training.kind_training}</p>
                   <p>ЗП: {countSalaryCoach(value, 'cancel')} грн.</p>
                   <p>Час: {value.training.time}</p>
                   {/* <p>{value.training.users}</p> */}

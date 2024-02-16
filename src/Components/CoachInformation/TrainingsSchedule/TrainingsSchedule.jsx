@@ -19,8 +19,8 @@ const TrainingsSchedule = () => {
   const [dataTrainings, setDataTrainings] = useState('');
   const [dataTrainingsToday, setDataTrainingsToday] = useState([]);
   const [dataTrainingsTomorrow, setDataTrainingsTomorrow] = useState([]);
-  const [visitTraining, setVisitTraining] = useState('');
-  const [cancelVisitTraining, setCancelVisitTraining] = useState('');
+  const [visitTrainingMap, setVisitTrainingMap] = useState({});
+  const [cancelVisitTrainingMap, setCancelVisitTrainingMap] = useState({});
   const linkInstagram = 'https://www.instagram.com/';
 
   const getTrainingsCoach = async (labelAuth) => {
@@ -56,14 +56,14 @@ const TrainingsSchedule = () => {
       const uniqueTimesToday = [...new Set(filteredTrainingsToday.map(training => training.time))];
       const uniqueTimesTomorrow = [...new Set(filteredTrainingsTomorrow.map(training => training.time))];
 
-      const uniqueKindTraineesToday = [...new Set(filteredTrainingsToday.map(training => training.kind_trainee))];
-      const uniqueKindTraineesTomorrow = [...new Set(filteredTrainingsTomorrow.map(training => training.kind_trainee))];
+      const uniqueKindTrainingsToday = [...new Set(filteredTrainingsToday.map(training => training.kind_training))];
+      const uniqueKindTrainingsTomorrow = [...new Set(filteredTrainingsTomorrow.map(training => training.kind_training))];
 
       const newDataToday = uniqueTimesToday.flatMap(time => {
-        return uniqueKindTraineesToday.map(kind_trainee => {
+        return uniqueKindTrainingsToday.map(kind_training => {
           const usersInformation = {};
           filteredTrainingsToday.forEach(training => {
-            if (training.time === time && training.kind_trainee === kind_trainee) {
+            if (training.time === time && training.kind_training === kind_training) {
               const foundDataTraining = dataTrainings.find(items => items.trainings.find(item => item._id === training._id));
               if (foundDataTraining) {
                 usersInformation[training._id] = {
@@ -72,9 +72,9 @@ const TrainingsSchedule = () => {
                   instagram: foundDataTraining.instagram,
                   trainingID: training._id,
                   time: time,
-                  kind_trainee: kind_trainee,
+                  kind_training: kind_training,
                   seasonTicketID: training.seasonTicketsID,
-                  visitTrainee: training.visitTrainee,
+                  visitTraining: training.visitTraining,
                   canceledTraining: training.canceledTraining,
                 };
               }
@@ -87,10 +87,10 @@ const TrainingsSchedule = () => {
       });
 
       const newDataTomorrow = uniqueTimesTomorrow.flatMap(time => {
-        return uniqueKindTraineesTomorrow.map(kind_trainee => {
+        return uniqueKindTrainingsTomorrow.map(kind_training => {
           const usersInformation = {};
           filteredTrainingsTomorrow.forEach(training => {
-            if (training.time === time && training.kind_trainee === kind_trainee) {
+            if (training.time === time && training.kind_training === kind_training) {
               const foundDataTraining = dataTrainings.find(items => items.trainings.find(item => item._id === training._id));
               if (foundDataTraining) {
                 usersInformation[training._id] = {
@@ -99,9 +99,9 @@ const TrainingsSchedule = () => {
                   instagram: foundDataTraining.instagram,
                   trainingID: training._id,
                   time: time,
-                  kind_trainee: kind_trainee,
+                  kind_training: kind_training,
                   seasonTicketID: training.seasonTicketsID,
-                  visitTrainee: training.visitTrainee,
+                  visitTraining: training.visitTraining,
                   canceledTraining: training.canceledTraining,
                 };
               }
@@ -129,17 +129,19 @@ const TrainingsSchedule = () => {
     }
     const sendVisitRequest = await clientAPI.OnSendVisitTraining(dataVisitTraining);
     if (sendVisitRequest === "Підтверджено тренування") {
-      setCancelVisitTraining(false);
-      setVisitTraining(true);
+      setCancelVisitTrainingMap(prevState => ({ ...prevState, [trainingID]: false }));
+      setVisitTrainingMap(prevState => ({ ...prevState, [trainingID]: true }));
     }
     if (sendVisitRequest === "Скасовано тренування") {
-      setCancelVisitTraining(true);
-      setVisitTraining(false);
+      setCancelVisitTrainingMap(prevState => ({ ...prevState, [trainingID]: true }));
+      setVisitTrainingMap(prevState => ({ ...prevState, [trainingID]: false }));
     }
-    // console.log(trainingID)
-    // console.log(visit)
     return sendVisitRequest;
-  }
+  };
+
+  // console.log("visitTrainingMap: ", visitTrainingMap);
+
+  // console.log("cancelVisitTrainingMap: ", cancelVisitTrainingMap);
 
   return (
     <WrapperInfoSlider>
@@ -149,17 +151,17 @@ const TrainingsSchedule = () => {
         <p>На сьогодні</p>
         {Object.values(dataTrainingsToday).map((dayTrainings, outerIndex) => (
           <WrapperRecords key={outerIndex}>
-            {Object.values(dayTrainings.usersInformation).map((userData, innerIndex) => (
-              <div key={innerIndex}>
-                  {innerIndex === 0 && (
-                    <p><NameTraining>{userData.kind_trainee} <br/>({userData.time})</NameTraining> </p>
+            {Object.values(dayTrainings.usersInformation).map((userData, index) => (
+              <div key={userData.trainingID}>
+                {index === 0 && (
+                  <p><NameTraining>{userData.kind_training} <br/>({userData.time})</NameTraining> </p>
                 )}
                 <WrapperUsersName
+                  id={userData.trainingID}
                   className={`
-                  ${userData.visitTrainee ? 'visited' : ''} 
-                  ${visitTraining ? 'visited' : ''} 
-                  ${userData.canceledTraining ? 'canceled' : ''}
-                  ${cancelVisitTraining ? 'canceled' : ''}`}>
+                    ${userData.visitTraining || visitTrainingMap[userData.trainingID] ? 'visited' : ''} 
+                    ${userData.canceledTraining || cancelVisitTrainingMap[userData.trainingID] ? 'canceled' : ''}`}
+                >
                   <FcCheckmark
                     onClick={(e) => handleCheckVisit(e, userData.trainingID, userData.seasonTicketID, 'true')} />
                   <a
@@ -183,7 +185,7 @@ const TrainingsSchedule = () => {
             {Object.values(dayTrainings.usersInformation).map((userData, innerIndex) => (
               <div key={innerIndex}>
                   {innerIndex === 0 && (
-                    <p><NameTraining>{userData.kind_trainee} <br/>({userData.time})</NameTraining> </p>
+                    <p><NameTraining>{userData.kind_training} <br/>({userData.time})</NameTraining> </p>
                   )}
                   <p>{userData.name}</p>
               </div>
