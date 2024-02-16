@@ -1,0 +1,912 @@
+[
+  {
+  "_id": "63b3ccf56b572c2ccaa1ec07",
+  "id": "saturday08:00",
+  "day": "saturday",
+  "time": "08:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-01-03T06:14:14.081Z",
+  "__v": 0
+  },
+  {
+  "_id": "63b3ccfa6b572c2ccaa1ec0b",
+  "id": "sunday08:00",
+  "day": "sunday",
+  "time": "08:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-01-03T06:14:14.081Z",
+  "__v": 0
+  },
+  {
+  "_id": "63dea68cd1a308b6b32421d6",
+  "id": "saturday18:00",
+  "day": "saturday",
+  "time": "18:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-02-04T18:19:51.405Z",
+  "__v": 0
+  },
+  {
+  "_id": "63dea68fd1a308b6b32421da",
+  "id": "sunday18:00",
+  "day": "sunday",
+  "time": "18:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-02-04T18:19:51.405Z",
+  "__v": 0
+  },
+  {
+  "_id": "63dea777d1a308b6b3242214",
+  "id": "saturday20:00",
+  "day": "saturday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-02-04T18:19:51.405Z",
+  "__v": 0
+  },
+  {
+  "_id": "63dea77cd1a308b6b3242218",
+  "id": "sunday20:00",
+  "day": "sunday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-02-04T18:19:51.405Z",
+  "__v": 0
+  },
+  {
+  "_id": "6428528fba7c489ef5ec12e2",
+  "id": "saturday09:00",
+  "day": "saturday",
+  "time": "09:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "64285297ba7c489ef5ec12e6",
+  "id": "sunday09:00",
+  "day": "sunday",
+  "time": "09:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "64285499ba7c489ef5ec133d",
+  "id": "sunday13:00",
+  "day": "sunday",
+  "time": "13:00",
+  "kind_trainee": "Jazz-Funk",
+  "name_Coach": "Вікторія Шевченко",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642854b1ba7c489ef5ec1341",
+  "id": "monday14:00",
+  "day": "monday",
+  "time": "14:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Sandrochka",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642854d3ba7c489ef5ec1351",
+  "id": "friday14:00",
+  "day": "friday",
+  "time": "14:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Sandrochka",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642855bfba7c489ef5ec137d",
+  "id": "sunday16:00",
+  "day": "sunday",
+  "time": "16:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "64285607ba7c489ef5ec1381",
+  "id": "monday17:00",
+  "day": "monday",
+  "time": "17:00",
+  "kind_trainee": "Stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "6428563fba7c489ef5ec138d",
+  "id": "sunday12:00",
+  "day": "sunday",
+  "time": "12:00",
+  "kind_trainee": "Vogue femme",
+  "name_Coach": "Вікторія Шевченко",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642856a8ba7c489ef5ec1399",
+  "id": "wednesday17:00",
+  "day": "wednesday",
+  "time": "17:00",
+  "kind_trainee": "Stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642856c8ba7c489ef5ec13a1",
+  "id": "friday17:00",
+  "day": "friday",
+  "time": "17:00",
+  "kind_trainee": "Stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642856cdba7c489ef5ec13a5",
+  "id": "saturday17:00",
+  "day": "saturday",
+  "time": "17:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642856d4ba7c489ef5ec13a9",
+  "id": "sunday17:00",
+  "day": "sunday",
+  "time": "17:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "6428574bba7c489ef5ec13c1",
+  "id": "monday19:00",
+  "day": "monday",
+  "time": "19:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Sandrochka",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "64285792ba7c489ef5ec13d5",
+  "id": "saturday19:00",
+  "day": "saturday",
+  "time": "19:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "64285796ba7c489ef5ec13d9",
+  "id": "sunday19:00",
+  "day": "sunday",
+  "time": "19:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "6428680aba7c489ef5ec144b",
+  "id": "wednesday14:00",
+  "day": "wednesday",
+  "time": "14:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Sandrochka",
+  "date": "2023-04-01T14:10:09.411Z",
+  "__v": 0
+  },
+  {
+  "_id": "642e80d21766f8c82e69b3a0",
+  "id": "wednesday19:00",
+  "day": "wednesday",
+  "time": "19:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Sandrochka",
+  "date": "2023-04-05T14:53:30.992Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457d928a8276da98603be07",
+  "id": "monday16:00",
+  "day": "monday",
+  "time": "16:00",
+  "kind_trainee": "Booty stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457d98ea8276da98603be23",
+  "id": "wednesday16:00",
+  "day": "wednesday",
+  "time": "16:00",
+  "kind_trainee": "Booty stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457da31a8276da98603be54",
+  "id": "friday16:00",
+  "day": "friday",
+  "time": "16:00",
+  "kind_trainee": "Booty stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457da43a8276da98603be5c",
+  "id": "friday19:00",
+  "day": "friday",
+  "time": "19:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Sandrochka",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457da90a8276da98603be70",
+  "id": "monday15:00",
+  "day": "monday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457daa7a8276da98603be78",
+  "id": "tuesday20:00",
+  "day": "tuesday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457dabea8276da98603be84",
+  "id": "wednesday15:00",
+  "day": "wednesday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457dad7a8276da98603be8c",
+  "id": "thursday20:00",
+  "day": "thursday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457daf3a8276da98603be9c",
+  "id": "friday20:00",
+  "day": "friday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "6457db1aa8276da98603beac",
+  "id": "sunday15:00",
+  "day": "sunday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-05-06T17:45:48.531Z",
+  "__v": 0
+  },
+  {
+  "_id": "648ff68c70b0d5c5e55fecd2",
+  "id": "saturday12:00",
+  "day": "saturday",
+  "time": "12:00",
+  "kind_trainee": "Stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-06-19T03:32:43.489Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65e36dd454ad5197f8af8",
+  "id": "monday08:00",
+  "day": "monday",
+  "time": "08:00",
+  "kind_trainee": "Marathon athlete",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65e5ddd454ad5197f8b04",
+  "id": "monday12:00",
+  "day": "monday",
+  "time": "12:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65e80dd454ad5197f8b0c",
+  "id": "monday09:00",
+  "day": "monday",
+  "time": "09:00",
+  "kind_trainee": "TRX + Tabata",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65ea8dd454ad5197f8b18",
+  "id": "tuesday08:00",
+  "day": "tuesday",
+  "time": "08:00",
+  "kind_trainee": "Marathon athlete",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65eb8dd454ad5197f8b1c",
+  "id": "tuesday09:00",
+  "day": "tuesday",
+  "time": "09:00",
+  "kind_trainee": "Тай-бо + Леді фіт",
+  "name_Coach": "Оля тай бо",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65ec7dd454ad5197f8b20",
+  "id": "tuesday12:00",
+  "day": "tuesday",
+  "time": "12:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65ed0dd454ad5197f8b24",
+  "id": "tuesday13:00",
+  "day": "tuesday",
+  "time": "13:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65ed6dd454ad5197f8b28",
+  "id": "tuesday14:00",
+  "day": "tuesday",
+  "time": "14:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65ef4dd454ad5197f8b30",
+  "id": "wednesday08:00",
+  "day": "wednesday",
+  "time": "08:00",
+  "kind_trainee": "Marathon athlete",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65efddd454ad5197f8b34",
+  "id": "thursday08:00",
+  "day": "thursday",
+  "time": "08:00",
+  "kind_trainee": "Marathon athlete",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f04dd454ad5197f8b38",
+  "id": "friday08:00",
+  "day": "friday",
+  "time": "08:00",
+  "kind_trainee": "Marathon athlete",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f13dd454ad5197f8b3c",
+  "id": "wednesday09:00",
+  "day": "wednesday",
+  "time": "09:00",
+  "kind_trainee": "TRX + Tabata",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f37dd454ad5197f8b48",
+  "id": "wednesday12:00",
+  "day": "wednesday",
+  "time": "12:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f55dd454ad5197f8b50",
+  "id": "thursday09:00",
+  "day": "thursday",
+  "time": "09:00",
+  "kind_trainee": "Тай-бо + Леді фіт",
+  "name_Coach": "Оля тай бо",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f5cdd454ad5197f8b54",
+  "id": "thursday12:00",
+  "day": "thursday",
+  "time": "12:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f65dd454ad5197f8b58",
+  "id": "thursday13:00",
+  "day": "thursday",
+  "time": "13:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65f93dd454ad5197f8b64",
+  "id": "friday09:00",
+  "day": "friday",
+  "time": "09:00",
+  "kind_trainee": "TRX + Tabata",
+  "name_Coach": "Вова Катін",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c65faddd454ad5197f8b70",
+  "id": "friday12:00",
+  "day": "friday",
+  "time": "12:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64c660b0dd454ad5197f8b92",
+  "id": "thursday14:00",
+  "day": "thursday",
+  "time": "14:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-07-30T01:30:47.476Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21dcd13a52a7b912866d9",
+  "id": "monday13:00",
+  "day": "monday",
+  "time": "13:00",
+  "kind_trainee": "Тай-бо + Леді фіт",
+  "name_Coach": "Оля тай бо",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21ddd13a52a7b912866dd",
+  "id": "monday18:00",
+  "day": "monday",
+  "time": "18:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21e2c13a52a7b912866e5",
+  "id": "wednesday13:00",
+  "day": "wednesday",
+  "time": "13:00",
+  "kind_trainee": "Тай-бо + Леді фіт",
+  "name_Coach": "Оля тай бо",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21e3d13a52a7b912866e9",
+  "id": "wednesday18:00",
+  "day": "wednesday",
+  "time": "18:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21eb613a52a7b912866f2",
+  "id": "friday13:00",
+  "day": "friday",
+  "time": "13:00",
+  "kind_trainee": "Тай-бо + Леді фіт",
+  "name_Coach": "Оля тай бо",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21ec313a52a7b912866f6",
+  "id": "monday10:00",
+  "day": "monday",
+  "time": "10:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21ece13a52a7b912866fa",
+  "id": "wednesday10:00",
+  "day": "wednesday",
+  "time": "10:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21ed813a52a7b912866fe",
+  "id": "friday10:00",
+  "day": "friday",
+  "time": "10:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "64e21ee213a52a7b91286702",
+  "id": "friday11:00",
+  "day": "friday",
+  "time": "11:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-08-20T01:56:28.786Z",
+  "__v": 0
+  },
+  {
+  "_id": "650322e4ea96813b560cdcf2",
+  "id": "monday11:00",
+  "day": "monday",
+  "time": "11:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "650322e9ea96813b560cdcf6",
+  "id": "wednesday11:00",
+  "day": "wednesday",
+  "time": "11:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "65032316ea96813b560cdcfe",
+  "id": "tuesday15:00",
+  "day": "tuesday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "65032348ea96813b560cdd0d",
+  "id": "thursday15:00",
+  "day": "thursday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "6503239bea96813b560cdd15",
+  "id": "sunday14:00",
+  "day": "sunday",
+  "time": "14:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "650324ddea96813b560cdd30",
+  "id": "saturday13:00",
+  "day": "saturday",
+  "time": "13:00",
+  "kind_trainee": "Jazz-Funk",
+  "name_Coach": "Вікторія Шевченко",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "650324e8ea96813b560cdd34",
+  "id": "saturday14:00",
+  "day": "saturday",
+  "time": "14:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "6503253cea96813b560cdd3c",
+  "id": "saturday16:00",
+  "day": "saturday",
+  "time": "16:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-09-14T02:34:03.269Z",
+  "__v": 0
+  },
+  {
+  "_id": "6505c1f7feb64f39757c1c94",
+  "id": "tuesday19:00",
+  "day": "tuesday",
+  "time": "19:00",
+  "kind_trainee": "Aero Mix",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-09-16T03:35:06.600Z",
+  "__v": 0
+  },
+  {
+  "_id": "6505c202feb64f39757c1c98",
+  "id": "thursday19:00",
+  "day": "thursday",
+  "time": "19:00",
+  "kind_trainee": "Aero Mix",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-09-16T03:35:06.600Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf17c6e091c123e176fc0",
+  "id": "monday20:00",
+  "day": "monday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf1a06e091c123e176fc4",
+  "id": "tuesday10:00",
+  "day": "tuesday",
+  "time": "10:00",
+  "kind_trainee": "Aero Mix",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf1ac6e091c123e176fc8",
+  "id": "tuesday11:00",
+  "day": "tuesday",
+  "time": "11:00",
+  "kind_trainee": "Booty stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf1c36e091c123e176fcc",
+  "id": "tuesday16:00",
+  "day": "tuesday",
+  "time": "16:00",
+  "kind_trainee": "Jazz-Funk",
+  "name_Coach": "Вікторія Шевченко",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf1d26e091c123e176fd0",
+  "id": "tuesday18:00",
+  "day": "tuesday",
+  "time": "18:00",
+  "kind_trainee": "High heels",
+  "name_Coach": "Лера фит хаус",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf1e26e091c123e176fd4",
+  "id": "wednesday20:00",
+  "day": "wednesday",
+  "time": "20:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf20b6e091c123e176fd8",
+  "id": "thursday10:00",
+  "day": "thursday",
+  "time": "10:00",
+  "kind_trainee": "Aero Mix",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf21a6e091c123e176fdc",
+  "id": "thursday11:00",
+  "day": "thursday",
+  "time": "11:00",
+  "kind_trainee": "Booty stretching",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf22b6e091c123e176fe0",
+  "id": "thursday16:00",
+  "day": "thursday",
+  "time": "16:00",
+  "kind_trainee": "Vogue femme",
+  "name_Coach": "Вікторія Шевченко",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2386e091c123e176fe4",
+  "id": "thursday18:00",
+  "day": "thursday",
+  "time": "18:00",
+  "kind_trainee": "High heels",
+  "name_Coach": "Лера фит хаус",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2486e091c123e176fe8",
+  "id": "friday18:00",
+  "day": "friday",
+  "time": "18:00",
+  "kind_trainee": "Kangoo jumps",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2556e091c123e176fec",
+  "id": "saturday10:00",
+  "day": "saturday",
+  "time": "10:00",
+  "kind_trainee": "Sky jumping",
+  "name_Coach": "Іра Кенго",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2676e091c123e176ff0",
+  "id": "saturday11:00",
+  "day": "saturday",
+  "time": "11:00",
+  "kind_trainee": "Тай-бо + Леді фіт",
+  "name_Coach": "Сирота Анастасія",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2736e091c123e176ff4",
+  "id": "sunday10:00",
+  "day": "sunday",
+  "time": "10:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf27c6e091c123e176ff8",
+  "id": "sunday11:00",
+  "day": "sunday",
+  "time": "11:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2d16e091c123e177002",
+  "id": "tuesday17:00",
+  "day": "tuesday",
+  "time": "17:00",
+  "kind_trainee": "Choreo",
+  "name_Coach": "Лера фит хаус",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2e06e091c123e177006",
+  "id": "thursday17:00",
+  "day": "thursday",
+  "time": "17:00",
+  "kind_trainee": "Choreo",
+  "name_Coach": "Лера фит хаус",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf3846e091c123e17700e",
+  "id": "friday15:00",
+  "day": "friday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  },
+  {
+  "_id": "652bf38d6e091c123e177012",
+  "id": "saturday15:00",
+  "day": "saturday",
+  "time": "15:00",
+  "kind_trainee": "-",
+  "name_Coach": "",
+  "date": "2023-10-14T21:41:39.377Z",
+  "__v": 0
+  }
+]

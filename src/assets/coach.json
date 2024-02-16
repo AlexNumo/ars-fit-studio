@@ -1,0 +1,80 @@
+[
+  {
+  "_id": "637d162fe6fdc7805f1dfbcf",
+  "name_Coach": "empty",
+  "tel": "-",
+  "__v": 0
+  },
+  {
+  "_id": "6426864717d1da106b95413c",
+  "name_Coach": "Вікторія Шевченко",
+  "tel": " 0732977650",
+  "instagram": "https://www.instagram.com/i_am_ms_flame",
+  "trainings": "Jazz-Funk та Vogue (Vogue + Heels)",
+  "__v": 0
+  },
+  {
+  "_id": "6426904c17d1da106b954151",
+  "name_Coach": "Сирота Анастасія",
+  "tel": "0975362193",
+  "instagram": "https://www.instagram.com/Stretching_by_si",
+  "trainings": "Booty stretching , Stretching",
+  "__v": 0
+  },
+  {
+  "_id": "642690c017d1da106b954156",
+  "name_Coach": "Sandrochka",
+  "tel": "0981058240",
+  "instagram": "https://www.instagram.com/sandrochka_strong/",
+  "trainings": "Власник",
+  "__v": 0
+  },
+  {
+  "_id": "64b69428ca320c9b12b9cfa3",
+  "name_Coach": "Настя Стрип",
+  "tel": "-",
+  "instagram": "-",
+  "trainings": "Strip",
+  "__v": 0
+  },
+  {
+  "_id": "64c65dc9dd454ad5197f8ae4",
+  "name_Coach": "Вова Катін",
+  "tel": "-",
+  "instagram": "-",
+  "trainings": "Marathon athlete",
+  "__v": 0
+  },
+  {
+  "_id": "64c65df5dd454ad5197f8aea",
+  "name_Coach": "Оля тай бо",
+  "tel": "-",
+  "instagram": "-",
+  "trainings": "Тай бо",
+  "__v": 0
+  },
+  {
+  "_id": "64c65e23dd454ad5197f8af1",
+  "name_Coach": "Іра Кенго",
+  "tel": "0957343987",
+  "instagram": "-",
+  "trainings": "Kangoo",
+  "__v": 0
+  },
+  {
+  "_id": "64f5c31c3e449b97b3a0d22f",
+  "name_Coach": "Зяблицька Марія",
+  "tel": "0636560043",
+  "instagram": "",
+  "trainings": "Twerk",
+  "__v": 0
+  },
+  {
+  "_id": "650323fdea96813b560cdd1a",
+  "name_Coach": "Лера фит хаус",
+  "tel": "0963155873",
+  "instagram": "",
+  "trainings": "High heels",
+  "__v": 0
+  }
+]

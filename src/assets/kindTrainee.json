@@ -1,0 +1,338 @@
+[
+  {
+  "_id": "6386091b05c6594f53734669",
+  "id": "-",
+  "value": "-",
+  "label": "Вид тренування",
+  "__v": 0
+  },
+  {
+  "_id": "638609a810a020051036b918",
+  "id": "None",
+  "value": "-",
+  "label": "Вільно",
+  "__v": 0
+  },
+  {
+  "_id": "638609ba10a020051036b91b",
+  "id": "kangoo-jumps",
+  "value": "Kangoo jumps",
+  "label": "Kangoo jumps",
+  "__v": 0
+  },
+  {
+  "_id": "638609cb10a020051036b91e",
+  "id": "sky-jumping",
+  "value": "Sky jumping",
+  "label": "Sky jumping",
+  "__v": 0
+  },
+  {
+  "_id": "638609da10a020051036b921",
+  "id": "stretching",
+  "value": "Stretching",
+  "label": "Stretching",
+  "__v": 0
+  },
+  {
+  "_id": "638609e710a020051036b924",
+  "id": "trx",
+  "value": "TRX",
+  "label": "TRX",
+  "__v": 0
+  },
+  {
+  "_id": "638609f610a020051036b927",
+  "id": "health-back",
+  "value": "Здорова спина",
+  "label": "Здорова спина",
+  "__v": 0
+  },
+  {
+  "_id": "63860a4010a020051036b92a",
+  "id": "high-heels",
+  "value": "High heels",
+  "label": "High heels",
+  "__v": 0
+  },
+  {
+  "_id": "63860a4b10a020051036b92d",
+  "id": "tribal",
+  "value": "Tribal fusion",
+  "label": "Tribal fusion",
+  "__v": 0
+  },
+  {
+  "_id": "63860a5810a020051036b930",
+  "id": "twerk",
+  "value": "Twerk",
+  "label": "Twerk",
+  "__v": 0
+  },
+  {
+  "_id": "63860a7010a020051036b933",
+  "id": "body-balet",
+  "value": "Боди балет",
+  "label": "Боди балет",
+  "__v": 0
+  },
+  {
+  "_id": "63860a7d10a020051036b936",
+  "id": "sky-jumping-child",
+  "value": "Sky діти",
+  "label": "Sky діти",
+  "__v": 0
+  },
+  {
+  "_id": "63860a8c10a020051036b939",
+  "id": "kangoo-jumps-child-10",
+  "value": "Kangoo діти (6-10)",
+  "label": "Kangoo діти (6-10)",
+  "__v": 0
+  },
+  {
+  "_id": "63860a9a10a020051036b93c",
+  "id": "kangoo-jumps-child-14",
+  "value": "Kangoo діти (10-14)",
+  "label": "Kangoo діти (10-14)",
+  "__v": 0
+  },
+  {
+  "_id": "63860aa410a020051036b93f",
+  "id": "yoga",
+  "value": "Йога",
+  "label": "Йога",
+  "__v": 0
+  },
+  {
+  "_id": "63860ab010a020051036b942",
+  "id": "functional",
+  "value": "Functional",
+  "label": "Functional",
+  "__v": 0
+  },
+  {
+  "_id": "63860abd10a020051036b945",
+  "id": "metabolick-workout",
+  "value": "Metabolick workout",
+  "label": "Metabolick workout",
+  "__v": 0
+  },
+  {
+  "_id": "6386107210a020051036b978",
+  "id": "functional-trx",
+  "value": "Functional TRX",
+  "label": "Functional TRX",
+  "__v": 0
+  },
+  {
+  "_id": "638610b710a020051036b97b",
+  "id": "fitness-mom-child",
+  "value": "Фітнес мама + малюк",
+  "label": "Фітнес мама + малюк",
+  "__v": 0
+  },
+  {
+  "_id": "638610d210a020051036b97e",
+  "id": "strip18+",
+  "value": "Strip 18+",
+  "label": "Strip 18+",
+  "__v": 0
+  },
+  {
+  "_id": "638610e410a020051036b981",
+  "id": "zumba",
+  "value": "Zumba",
+  "label": "Zumba",
+  "__v": 0
+  },
+  {
+  "_id": "638610fd10a020051036b984",
+  "id": "personal",
+  "value": "Персональні",
+  "label": "Персональні",
+  "__v": 0
+  },
+  {
+  "_id": "6386111810a020051036b987",
+  "id": "bachata",
+  "value": "Bachata (парні танці)",
+  "label": "Bachata (парні танці)",
+  "__v": 0
+  },
+  {
+  "_id": "6386113d10a020051036b98a",
+  "id": "jazz-funk",
+  "value": "Jazz-Funk",
+  "label": "Jazz-Funk",
+  "__v": 0
+  },
+  {
+  "_id": "6386115610a020051036b98d",
+  "id": "vogue",
+  "value": "Vogue",
+  "label": "Vogue",
+  "__v": 0
+  },
+  {
+  "_id": "638611bb10a020051036b990",
+  "id": "sport-ballet-dance-4+",
+  "value": "Спортивні бальні танці 4+",
+  "label": "Спортивні бальні танці 4+",
+  "__v": 0
+  },
+  {
+  "_id": "63b3c9536b572c2ccaa1ea45",
+  "id": "TRX + Tabata",
+  "value": "TRX + Tabata",
+  "label": "TRX + Tabata",
+  "__v": 0
+  },
+  {
+  "_id": "63b3c9b16b572c2ccaa1ea5d",
+  "id": "Здорова спина +",
+  "value": "Здорова спина +",
+  "label": "Здорова спина +",
+  "__v": 0
+  },
+  {
+  "_id": "63dea287d1a308b6b32420ab",
+  "id": "fly_stretching",
+  "value": "Fly stretching",
+  "label": "Fly stretching",
+  "__v": 0
+  },
+  {
+  "_id": "63dea3b7d1a308b6b3242101",
+  "id": "Lady-style",
+  "value": "Lady style",
+  "label": "Lady style",
+  "__v": 0
+  },
+  {
+  "_id": "63dea4a1d1a308b6b324215b",
+  "id": "child-dance",
+  "value": "Дитяча хореографія",
+  "label": "Дитяча хореографія",
+  "__v": 0
+  },
+  {
+  "_id": "63dea534d1a308b6b3242165",
+  "id": "Acrobatics-child",
+  "value": "Акробатика (діти)",
+  "label": "Акробатика (діти)",
+  "__v": 0
+  },
+  {
+  "_id": "63dea57fd1a308b6b324216f",
+  "id": "Sky-jumping-child",
+  "value": "Sky jumping (діти)",
+  "label": "Sky jumping (діти)",
+  "__v": 0
+  },
+  {
+  "_id": "63dea722d1a308b6b32421f9",
+  "id": "baking-18+",
+  "value": "Булочна 18+",
+  "label": "Булочна 18+",
+  "__v": 0
+  },
+  {
+  "_id": "63e21e2686d4a4086f30c1ea",
+  "id": "booty-stretching",
+  "value": "Booty stretching",
+  "label": "Booty stretching",
+  "__v": 0
+  },
+  {
+  "_id": "6427cad04f9d10d8c35b80d9",
+  "id": "aero-stretching",
+  "value": "Aero stretching",
+  "label": "Aero stretching",
+  "__v": 0
+  },
+  {
+  "_id": "6427cb0a4f9d10d8c35b80dc",
+  "id": "contemporary",
+  "value": "Contemporary",
+  "label": "Contemporary",
+  "__v": 0
+  },
+  {
+  "_id": "6428542eba7c489ef5ec1321",
+  "id": "vogue-femme",
+  "value": "Vogue femme",
+  "label": "Vogue femme",
+  "__v": 0
+  },
+  {
+  "_id": "64285568ba7c489ef5ec1361",
+  "id": "twerk2",
+  "value": "Twerk 2.0",
+  "label": "Twerk 2.0",
+  "__v": 0
+  },
+  {
+  "_id": "642857e2ba7c489ef5ec13dc",
+  "id": "bulking",
+  "value": "Булочна",
+  "label": "Булочна",
+  "__v": 0
+  },
+  {
+  "_id": "64610ccbe0b9554e7c4c127c",
+  "id": "latinasolo",
+  "value": "Latina SoLo",
+  "label": "Latina SoLo",
+  "__v": 0
+  },
+  {
+  "_id": "648ff3db70b0d5c5e55fec93",
+  "id": "circl-mobility",
+  "value": "Circl Mobility",
+  "label": "Circl Mobility",
+  "__v": 0
+  },
+  {
+  "_id": "64abccaf111cf2a5ae320b49",
+  "id": "reggaeton-fusion",
+  "value": "Reggaeton fusion",
+  "label": "Reggaeton fusion",
+  "__v": 0
+  },
+  {
+  "_id": "64b6944eca320c9b12b9cfa9",
+  "id": "strip",
+  "value": "Strip",
+  "label": "Strip",
+  "__v": 0
+  },
+  {
+  "_id": "64c65d40dd454ad5197f8ada",
+  "id": "take-bo",
+  "value": "Тай-бо + Леді фіт",
+  "label": "Тай-бо + Леді фіт",
+  "__v": 0
+  },
+  {
+  "_id": "64c65d89dd454ad5197f8add",
+  "id": "Marathon-athlete",
+  "value": "Marathon athlete",
+  "label": "Marathon athlete",
+  "__v": 0
+  },
+  {
+  "_id": "6505c169feb64f39757c1c8d",
+  "id": "aero-mix",
+  "value": "Aero Mix",
+  "label": "Aero Mix",
+  "__v": 0
+  },
+  {
+  "_id": "652bf2bb6e091c123e176ffb",
+  "id": "choreo",
+  "value": "Choreo",
+  "label": "Choreo",
+  "__v": 0
+  }
+]

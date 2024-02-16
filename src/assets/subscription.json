@@ -1,0 +1,26 @@
+{
+  "seasonTickets": {
+    "seasonTicket": {
+      "name": "Базовий",
+      "limit": "6",
+      "remainder": true,
+      "date": "2023",
+      "useTicketsOnTrainings": {},
+      "allUnique": {
+        "mocha": "kangoo",
+        "chai": "tabata"
+      }
+    },
+    "seasonTicket2": {
+      "name": "Базовий",
+      "limit": "6",
+      "remainder": true,
+      "date": "2023",
+      "useTicketsOnTrainings": {},
+      "allUnique": {
+        "mocha": "kangoo",
+        "chai": "tabata"
+      }
+    }
+  }
+}
