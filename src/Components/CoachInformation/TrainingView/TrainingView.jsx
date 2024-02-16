@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo} from "react";
 import { scheduleAPI } from "../../../service/axios.schedule";
 import { kindTrainingsAPI } from "../../../service/axios.kindTrainings";
 import { clientAPI } from "../../../service/axios.users";
