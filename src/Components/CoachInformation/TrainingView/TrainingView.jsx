@@ -13,7 +13,7 @@ import {
 } from './TrainingView.styled';
 
 const TrainingView = () => {
-  const days = {
+  const days = useMemo(() => ({
     day1: 'monday',
     day2: 'tuesday',
     day3: 'wednesday',
@@ -21,7 +21,7 @@ const TrainingView = () => {
     day5: 'friday',
     day6: 'saturday',
     day7: 'sunday',
-  };
+  }), []);
 
   const [scheduleData, setScheduleData] = useState([]);
   const [scheduleByDay, setScheduleByDay] = useState({
@@ -108,13 +108,14 @@ const TrainingView = () => {
       filteredSchedule[day] = scheduleData
         .filter(item => item.day === day)
         .sort((a, b) => {
-          const timeA = parseInt(a.time.split(":")[0]); // розбиваємо час на години та хвилини
+          const timeA = parseInt(a.time.split(":")[0]);
           const timeB = parseInt(b.time.split(":")[0]);
-          return timeA - timeB; // відсортовуємо за годинами
+          return timeA - timeB;
         });
     }
     setScheduleByDay(filteredSchedule);
   }, [scheduleData]);
+
 
   const openChangeSchedule = () => {
     // e.preventDefault();
