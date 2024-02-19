@@ -12,6 +12,8 @@ import { useSelector } from 'react-redux';
 import ScheduleAdmin from '../../CoachInformation/ScheduleAdmin/ScheduleAdmin';
 import TrainingView from '../../CoachInformation/TrainingView/TrainingView';
 import { FaPhoenixFramework } from "react-icons/fa6";
+import AllUsers from '../../CoachInformation/AllUsers/AllUsers';
+import ConfirmSeasonTickets from '../../CoachInformation/ConfirmSeasonTickets/ConfirmSeasonTickets';
 
 const Sliders = () => {
   const user = useSelector((state) => state.user);
@@ -69,19 +71,34 @@ const Sliders = () => {
         '' :
         <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}><Trainings /></div>} */}
       <div style={{ backgroundColor: 'inherit', display: 'flex', alignItems: 'start' }}>
-       {access === 'coach' || access === 'admin' ? <TrainingsSchedule/> : <Subscription/>}
+       {/* {access === 'coach' || access === 'admin' ? <TrainingsSchedule/> : <Subscription/>} */}
+       {access === 'admin' && <TrainingsSchedule/>}
+       {access === 'coach' && <TrainingsSchedule/>}
+       {access === 'client' && <Subscription/>}
      </div>
      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-       {access === 'admin' ? <ScheduleAdmin/> : access === 'coach' ? <Prepare/> : <LoveTrainings/>}
+        {/* {access === 'admin' ? <ScheduleAdmin /> : access === 'coach' ? <Prepare /> : <LoveTrainings />} */}
+        {access === 'admin' && <ScheduleAdmin/>}
+        {access === 'coach' && <Prepare/>}
+        {access === 'client' && <LoveTrainings/>}
      </div>
      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-       {access === 'admin' ? <TrainingView/> : access === 'coach' ? <Prepare/> : <WrapperInfoSlider><Schedule/></WrapperInfoSlider>}
+        {/* {access === 'admin' ? <TrainingView /> : access === 'coach' ? <Prepare /> : <WrapperInfoSlider><Schedule /></WrapperInfoSlider>} */}
+        {access === 'admin' && <TrainingView/>}
+        {access === 'coach' && <Prepare/>}
+        {access === 'client' && <WrapperInfoSlider><Schedule /></WrapperInfoSlider>}
      </div>
       <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-       {access === 'coach' || access === 'admin' ? <Prepare/> : <Visiting/>}
+        {/* {access === 'coach' || access === 'admin' ? <Prepare /> : <Visiting />} */}
+        {access === 'admin' && <AllUsers/>}
+        {access === 'coach' && <Prepare/>}
+        {access === 'client' && <Visiting/>}
      </div>
      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-       {access === 'coach' || access === 'admin' ? <Prepare/> : <Trainings/>}
+        {/* {access === 'coach' || access === 'admin' ? <Prepare /> : <Trainings />} */}
+        {access === 'admin' && <ConfirmSeasonTickets/>}
+        {access === 'coach' && <Prepare/>}
+        {access === 'client' && <Trainings/>}
      </div>
         
       

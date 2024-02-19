@@ -55,7 +55,7 @@ const ScheduleAdmin = () => {
   }
   // console.log(dataCoach)
   return (
-    <div>
+    <div style={{overflow: 'auto', height: '540px'}}>
       <h3>Тренери</h3>
       {dataCoach.length > 0 && dataCoach.map((item, index) => (
         <WrapperCoachInfo key={index}>

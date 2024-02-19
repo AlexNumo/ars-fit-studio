@@ -10,6 +10,7 @@ import {
   NonButton,
   InputStyle,
   SelectTrainings,
+  // SelectTrainingsComponent,
   WrapperCoachTrainings
 } from './ModalView.styled';
 import { MdOutlineDone } from "react-icons/md";
@@ -19,6 +20,8 @@ import { useState } from 'react';
 import { clientAPI } from '../../service/axios.users';
 import { scheduleAPI } from '../../service/axios.schedule';
 import { kindTrainingsAPI } from "../../service/axios.kindTrainings";
+import 'react-select-search/style.css';
+import SelectSearch from 'react-select-search';
 
 const translateDay = (day) => {
   switch (day.toLowerCase()) {
@@ -565,74 +568,34 @@ export const ModalViewAddSchedule = ({
               <CloseBTN onClick={() => openChangeSchedule()}>&times;</CloseBTN>
             </ModalHeader>
             <div style={{marginBottom: '15px'}}>
-              <SelectTrainings
+              <SelectSearch
                 value={selectedDay}
-                onChange={(e) => setSelectedDay(e.target.value)}
-              >
-                <option
-                  style={{ backgroundColor: '#d6aaaa' }}
-                  value="-"
-                >Обери день</option>
-                {days ?
-                  Object.values(days).map((item, index) => (
-                    <option
-                      key={index}
-                      value={item}
-                      style={{ backgroundColor: '#d6aaaa', overflow: 'auto' }}
-                    >{translateDay(item)}</option>
-                  )) : <></>}
-              </SelectTrainings>
-              <SelectTrainings
+                onChange={(value) => setSelectedDay(value)}
+                options={days ? Object.values(days).map((day) => ({ name: translateDay(day), value: day })) : []}
+                placeholder="Оберіть день"
+              />
+              <SelectSearch
                 value={selectedTime}
-                onChange={(e) => setSelectedTime(e.target.value)}
-              >
-                <option
-                  style={{ backgroundColor: '#d6aaaa' }}
-                  value="-"
-                >Обери час</option>
-                {time ?
-                  Object.values(time).map((item, index) => (
-                    <option
-                      key={index}
-                      value={item}
-                      style={{ backgroundColor: '#d6aaaa', overflow: 'auto' }}
-                    >{item}</option>
-                  )) : <></>}
-              </SelectTrainings>
-              <SelectTrainings
+                onChange={(value) => setSelectedTime(value)}
+                options={time ? Object.values(time).map((item) => ({ name: item, value: item })) : []}
+                placeholder="Оберіть час"
+                search
+                style={{backgroundColor: '#000000'}}
+              />
+              <SelectSearch
                 value={selectedKindTraining}
-                onChange={(e) => setSelectedKindTraining(e.target.value)}
-              >
-                <option
-                  style={{ backgroundColor: '#d6aaaa' }}
-                  value="-"
-                >Обери вид тренування</option>
-                {kindTrainingData ?
-                  kindTrainingData.map((item, index) => (
-                    <option
-                      key={index}
-                      value={item.value}
-                      style={{ backgroundColor: '#d6aaaa', overflow: 'auto' }}
-                    >{item.label}</option>
-                  )) : <></>}
-              </SelectTrainings>
-              <SelectTrainings
+                onChange={(value) => setSelectedKindTraining(value)}
+                options={kindTrainingData ? kindTrainingData.map((item) => ({ name: item.label, value: item.value})) : []}
+                placeholder="Оберіть вид тренування"
+                search
+              />
+              <SelectSearch
                 value={selectedCoach}
-                onChange={(e) => setSelectedCoach(e.target.value)}
-              >
-                <option
-                  style={{ backgroundColor: '#d6aaaa' }}
-                  value="-"
-                >Обери тренера</option>
-                {dataCoach ?
-                  dataCoach.map((item, index) => (
-                    <option
-                      key={index}
-                      value={item.labelAuth}
-                      style={{ backgroundColor: '#d6aaaa', overflow: 'auto' }}
-                    >{item.labelAuth}</option>
-                  )) : <></>}
-              </SelectTrainings>
+                onChange={(value) => setSelectedCoach(value)}
+                options={dataCoach ? dataCoach.map((item) => ({ name: item.labelAuth, value: item.labelAuth })) : []}
+                placeholder="Оберіть тренера"
+                search
+              />
             </div>
               <OKbutton onClick={sendDataSchedule}>Відправити зміни</OKbutton>
           </Modal>

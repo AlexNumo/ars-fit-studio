@@ -1,4 +1,5 @@
 import styled from "styled-components";
+// import SelectSearch from 'react-select-search';
 
 export const WrapperModal = styled.div`
   position: absolute;
@@ -124,6 +125,18 @@ export const SelectTrainings = styled.select`
   border: 2px solid #4a4d53;
   margin-top: 10px;
 `;
+
+// export const SelectTrainingsComponent = styled(SelectSearch)`
+//   .select-search-container {
+//     --select-search-background: inherit;
+//     --select-search-border-radius: 12px;
+//     --select-search-text-align: center;
+//     --select-search-width: 100%;
+//     --select-search-height: 35px;
+//     --select-search-border: 2px solid #4a4d53;
+//     --select-search-margin-top: 10px;
+//   }
+// `;
 
 export const WrapperCoachTrainings = styled.div`
   display: flex;

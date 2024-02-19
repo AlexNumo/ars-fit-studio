@@ -151,7 +151,7 @@ export const OnGetCoachTrainings = async (coachLabel) => {
 };
 // OnSendVisitTraining
 export const OnSendVisitTraining = async (trainingInfo) => {
-  console.log(trainingInfo);
+  // console.log(trainingInfo);
   try {
     const result = await serverAPI.post(`/user/coach/visit`, trainingInfo);
     console.log(result);
@@ -179,7 +179,43 @@ export const OnGetCoaches = async () => {
 export const OnGetCoachSalary = async (coachInfo) => {
   try {
     const result = await serverAPI.put(`/user/coach/salary`, coachInfo);
-    console.log(result.data); 
+    // console.log(result.data); 
+    return result.data;
+  } catch (error) {
+    toast.error('Упс, щось пішло не так');
+    console.error(error.message);
+  }
+};
+
+export const OnGetAllUsers = async () => {
+  try {
+    const result = await serverAPI.get(`/user/all`);
+    // console.log(result.data); 
+    return result.data;
+  } catch (error) {
+    toast.error('Упс, щось пішло не так');
+    console.error(error.message);
+  }
+};
+
+export const OnGetSeasonTicketsNotConfirm = async () => {
+  try {
+    const result = await serverAPI.get(`/user/seasonTicketsConfirm`);
+    // console.log(result.data); 
+    return result.data;
+  } catch (error) {
+    toast.error('Упс, щось пішло не так');
+    console.error(error.message);
+  }
+};
+
+export const OnSeasonTicketConfirm = async (idSeasonTicket, idUser, selectedDateValue) => {
+  try {
+    const result = await serverAPI.post(`/user/seasonTicketsConfirm`, { idSeasonTicket, idUser, selectedDateValue });
+    if (result.data.error === 'Абонемент вже було підтверджено') {
+     return toast.error(`${result.data.error}`);
+    }
+    toast.success(`${result.data}`);
     return result.data;
   } catch (error) {
     toast.error('Упс, щось пішло не так');
@@ -427,6 +463,9 @@ export const clientAPI = {
   OnSendVisitTraining,
   OnGetCoaches,
   OnGetCoachSalary,
+  OnGetAllUsers,
+  OnGetSeasonTicketsNotConfirm,
+  OnSeasonTicketConfirm,
   // sendData,
   // getData,
   // getDataALL,
