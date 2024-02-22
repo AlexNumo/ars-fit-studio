@@ -17,7 +17,7 @@ export const OKbutton = styled.button`
 	box-shadow: 3px 4px 0px 0px #899599;
 	background: linear-gradient(to bottom, #b6e6a7 5%, #32e132 100%);
   /* margin-right: 2px; */
-  margin: 15px;
+  margin: 5px;
 	background-color:#ededed;
 	border-radius:15px;
 	border:1px solid #d6bcd6;

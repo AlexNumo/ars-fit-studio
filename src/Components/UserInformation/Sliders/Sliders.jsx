@@ -14,6 +14,7 @@ import TrainingView from '../../CoachInformation/TrainingView/TrainingView';
 import { FaPhoenixFramework } from "react-icons/fa6";
 import AllUsers from '../../CoachInformation/AllUsers/AllUsers';
 import ConfirmSeasonTickets from '../../CoachInformation/ConfirmSeasonTickets/ConfirmSeasonTickets';
+import CoachTrainingsAll from '../../CoachInformation/CoachTrainingsAll/CoachTrainingsAll';
 
 const Sliders = () => {
   const user = useSelector((state) => state.user);
@@ -34,42 +35,6 @@ const Sliders = () => {
       animation="cubeAnimation"
       style={{height: '550px'}}
     >
-      
-        {/* {access === 'coach' || access === 'admin'
-        ? 
-          <div style={{ backgroundColor: 'inherit', display: 'flex', alignItems: 'start' }}>
-          <TrainingsSchedule /></div>
-        :
-        <div style={{ backgroundColor: 'inherit', display: 'flex', alignItems: 'start' }}>
-          <Subscription /></div>
-        }
-        {access === 'admin' ? 
-        <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-        <ScheduleAdmin/></div> : 
-        access === 'coach' ? 
-          '' :
-          <div style={{ backgroundColor: 'inherit', display: 'flex', alignItems: 'start' }}>
-            <LoveTrainings /></div>}
-      
-        
-      {access === 'admin' ? 
-      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-        <TrainingView/> </div>
-        : access === 'coach' ? '' :
-          <div style={{ backgroundColor: 'inherit', display: 'flex', alignItems: 'start' }}>
-            <WrapperInfoSlider>
-              <Schedule />
-            </WrapperInfoSlider>
-          </div>
-      }
-      
-        
-      {access === 'coach' || access === 'admin' ? '' : 
-      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
-        <Visiting/></div>}
-      {access === 'coach' || access === 'admin' ?
-        '' :
-        <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}><Trainings /></div>} */}
       <div style={{ backgroundColor: 'inherit', display: 'flex', alignItems: 'start' }}>
        {/* {access === 'coach' || access === 'admin' ? <TrainingsSchedule/> : <Subscription/>} */}
        {access === 'admin' && <TrainingsSchedule/>}
@@ -79,7 +44,7 @@ const Sliders = () => {
      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>
         {/* {access === 'admin' ? <ScheduleAdmin /> : access === 'coach' ? <Prepare /> : <LoveTrainings />} */}
         {access === 'admin' && <ScheduleAdmin/>}
-        {access === 'coach' && <Prepare/>}
+        {access === 'coach' && <CoachTrainingsAll/>}
         {access === 'client' && <LoveTrainings/>}
      </div>
      <div style={{backgroundColor: 'inherit', display: 'flex', alignItems: 'start'}}>

@@ -22,6 +22,7 @@ import { scheduleAPI } from '../../service/axios.schedule';
 import { kindTrainingsAPI } from "../../service/axios.kindTrainings";
 import 'react-select-search/style.css';
 import SelectSearch from 'react-select-search';
+import { pay } from '../../assets/pay.js';
 
 const translateDay = (day) => {
   switch (day.toLowerCase()) {
@@ -65,22 +66,6 @@ const BoldIcon = ({ size, color }) => (
   />
 );
 
-const pay = {
-  0: 0,
-  1: 100,
-  2: 200,
-  3: 200,
-  4: 250,
-  5: 250,
-  6: 250,
-  7: 300,
-  8: 300,
-  9: 300,
-  10: 350,
-  11: 350,
-  12: 350,
-}
-
 export const ModalView = ({
   handleClose,
   show,
@@ -98,6 +83,7 @@ export const ModalView = ({
   const handleConfirmed = async (e, selectedDate) => {
     e.preventDefault();
     setIsDisable(true);
+    // console.log("BAAAAD")
 
   const options = { timeZone: 'Europe/Kiev', weekday: 'short', month: 'short', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
 
@@ -168,7 +154,12 @@ export const ModalView = ({
                     </p>
                   </div>
                   <WrapperBTN>
-                    <OKbutton onClick={ (e) => handleConfirmed(e, selectedDay)} disabled={isDisable}>Так</OKbutton>
+                    <OKbutton
+                      onClick={(e) => handleConfirmed(e, selectedDay)}
+                      disabled={isDisable}
+                    >
+                      Так
+                    </OKbutton>
                     <NonButton onClick={handleClose}>Ні</NonButton>
                   </WrapperBTN>
                 </>
@@ -195,6 +186,7 @@ export const PasswordForm = ({ show, handleClose }) => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [isDisable, setIsDisable] = useState(false);
 
   // const dispatch = useDispatch();
 
@@ -212,12 +204,12 @@ export const PasswordForm = ({ show, handleClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     // Перевірка, чи новий пароль співпадає з підтвердженням
     if (newPassword !== confirmPassword) {
       setMessage('Паролі не співпадають');
       return;
     }
+    setIsDisable(true);
     const userID = user.id;
     await clientAPI.OnUpgradeUserPassword({ id: userID , currentPassword: currentPassword, newPassword: newPassword})
     // OnGetUserPassword
@@ -275,7 +267,12 @@ export const PasswordForm = ({ show, handleClose }) => {
                   />
             </div>
               <WrapperBTN>
-                <OKbutton type="submit">Змінити пароль</OKbutton>
+                    <OKbutton
+                      type="submit"
+                      disabled={isDisable}
+                    >
+                      Змінити пароль
+                    </OKbutton>
                 <NonButton onClick={handleClose}>Відмінити</NonButton>
               </WrapperBTN>
               </form>
@@ -295,7 +292,12 @@ export const ModalViewBuySubscription = ({
   handleShowModal
 }) => {
   const user = useSelector((state) => state.user);
+  const [isDisable, setIsDisable] = useState(false);
   const dataSeasonTickets = useSelector((state) => state.seasonTickets);
+  const [selectedKindTraining, setSelectedKindTraining] = useState('');
+  const [selectedSeasonTicket, setSelectedSeasonTicket] = useState('');
+  const [buySeasonTicket, setBuySeasonTicket] = useState(false);
+
   const group = dataSeasonTickets.seasonTickets.filter(item => item.kind === 'group');
   const personalDance = dataSeasonTickets.seasonTickets.filter(item => item.kind === 'personal' && item.includes.includes('High Heels'));
   const personalHard = dataSeasonTickets.seasonTickets.filter(item => item.kind === 'personal' && item.includes.includes('Sky jumping'));
@@ -313,10 +315,6 @@ export const ModalViewBuySubscription = ({
         result: personalHard,
     }
   ];
-
-  const [selectedKindTraining, setSelectedKindTraining] = useState('');
-  const [selectedSeasonTicket, setSelectedSeasonTicket] = useState('');
-  const [buySeasonTicket, setBuySeasonTicket] = useState(false);
 
   const chooseKind = allKindSeasonTickets.filter(item => item.name === selectedKindTraining);
 
@@ -338,6 +336,7 @@ export const ModalViewBuySubscription = ({
       }
     };
     // await clientAPI.OnSendTgBuySeasonTicket(userDataSeasonTicket);
+    setIsDisable(true);
     const result = await clientAPI.OnBuySeasonTicket(userDataSeasonTicket);
     if (result) {
       return setBuySeasonTicket(true);
@@ -376,7 +375,7 @@ export const ModalViewBuySubscription = ({
               </SelectTrainings>
                 <SelectTrainings
                   value={selectedSeasonTicket}
-                onChange={(e) => setSelectedSeasonTicket(e.target.value)}>
+                  onChange={(e) => setSelectedSeasonTicket(e.target.value)}>
                 {chooseKind.length > 0 
                   ? 
                   <option
@@ -402,7 +401,12 @@ export const ModalViewBuySubscription = ({
                   ))): <></>}</SelectTrainings>
               </div>
               <WrapperBTN>
-                <OKbutton onClick={handleChooseSeasonTicket}>Придбати</OKbutton>
+                  <OKbutton
+                    onClick={handleChooseSeasonTicket}
+                    disabled={isDisable}
+                  >
+                    Придбати
+                  </OKbutton>
                 <NonButton onClick={handleShowModal}>Буду жирним</NonButton>
               </WrapperBTN>
             </>
@@ -439,7 +443,7 @@ export const ModalViewCoachSalary = ({
     document.getElementById('canceled')
   })
 
-  console.log(dataCoachTrainings);
+  // console.log(dataCoachTrainings);
 
   const countTrainingsUsers = (value, status) => {
     if (!value || !value.users || !Array.isArray(value.users)) {
@@ -622,7 +626,6 @@ export const ModalViewAddKindTraining = ({
     await kindTrainingsAPI.OnAddKindTrainings(kindSend);
   };
 
-  
   return (
     <WrapperModal>
       <div>

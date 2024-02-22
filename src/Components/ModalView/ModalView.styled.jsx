@@ -79,7 +79,14 @@ export const OKbutton = styled.button`
   :active {
     position:relative;
     top:1px;
-}`;
+  }
+  &:disabled {
+    background: #ccc; /* Новий колір фону для вимкненої кнопки */
+    border-color: #aaa; /* Новий колір рамки для вимкненої кнопки */
+    color: #999; /* Новий колір тексту для вимкненої кнопки */
+    cursor: not-allowed; /* Зміна курсору для вимкненої кнопки */
+  }
+`;
 
 export const NonButton = styled.button`
 	box-shadow: 3px 4px 0px 0px #8a2a21;

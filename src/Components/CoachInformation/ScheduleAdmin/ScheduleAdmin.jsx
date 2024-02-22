@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+// import styled from "styled-components";
 import {
   WrapperCoachInfo,
+  StyledDatePicker,
+  ChooseBTN
 } from './ScheduleAdmin.styled';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { clientAPI } from "../../../service/axios.users";
@@ -52,7 +55,8 @@ const ScheduleAdmin = () => {
 
   const handleCloseModal = () => {
     return setOpen(false);
-  }
+  };
+
   // console.log(dataCoach)
   return (
     <div style={{overflow: 'auto', height: '540px'}}>
@@ -72,7 +76,7 @@ const ScheduleAdmin = () => {
           <p>Унікальний ідентифікатор: {item.labelAuth}</p>
           <p>Доступ: {item.type}</p>
           <p>Здійснити розрахунок тренера за період:</p>
-          <DatePicker
+          <StyledDatePicker
             selected={dateRanges[item.labelAuth]?.startDate}
             onChange={date => handleStartDateChange(date, item.labelAuth)}
             selectsStart
@@ -80,7 +84,7 @@ const ScheduleAdmin = () => {
             endDate={dateRanges[item.labelAuth]?.endDate}
             placeholderText="Початок"
           />
-          <DatePicker
+          <StyledDatePicker
             selected={dateRanges[item.labelAuth]?.endDate}
             onChange={date => handleEndDateChange(date, item.labelAuth)}
             selectsEnd
@@ -89,7 +93,7 @@ const ScheduleAdmin = () => {
             minDate={dateRanges[item.labelAuth]?.startDate}
             placeholderText="Кінець"
           />
-          <button onClick={() => handleViewTrainingsPay(item.labelAuth)}>Вибрати</button>
+          <ChooseBTN onClick={() => handleViewTrainingsPay(item.labelAuth)}>Вибрати</ChooseBTN>
         </WrapperCoachInfo>
       ))}
       {open ?

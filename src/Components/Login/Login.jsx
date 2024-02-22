@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate  } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import Auth from '../Header/Auth/Auth';
@@ -29,8 +29,8 @@ const Login = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState('');
   const [birthday, setBirthday] = useState('');
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("+380981058240");
+  const [password, setPassword] = useState("74Omevet");
   const dispatch = useDispatch();
   // const user = useSelector((state) => state.user);
   const navigate = useNavigate ();
@@ -45,10 +45,11 @@ const Login = ({ onLogin }) => {
               : null;
 
         if (getData) {
-          const getseasonTickets = await clientAPI.OnGetAllSeasonTickets()
+          const getSeasonTickets = await clientAPI.OnGetAllSeasonTickets()
           const userData = { ...getData.data, isAuthenticated: true };
           dispatch(setUser(userData));
-          dispatch(setSeasonTickets(getseasonTickets));
+          dispatch(setSeasonTickets(getSeasonTickets));
+          localStorage.setItem('token', userData.token);
 
           // Додати затримку перед переходом на /cabinet (2 секунди)
           // setTimeout(() => {
@@ -57,7 +58,48 @@ const Login = ({ onLogin }) => {
       }
   };
 
+  const verifyToken = async (token) => {
+    return await clientAPI.OnAuth(token);
+  }
 
+  const getSeasonTickets = async () => {
+    return await clientAPI.OnGetAllSeasonTickets();
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    const fetchData = async () => {
+      if (token) {
+        try {
+          const getData = await verifyToken(token);
+          const getSeasonTicketsData = await getSeasonTickets();
+          const userData = { ...getData.data, isAuthenticated: true };
+
+          dispatch(setUser(userData));
+          dispatch(setSeasonTickets(getSeasonTicketsData));
+          navigate('/cabinet');
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
+    };
+
+    fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   const verifyToken = async (token) => {
+  //     return await clientAPI.OnAuth(token)
+  //   }
+  //   if (token) {
+  //     return verifyToken(token);
+  //   }
+  //   return token;
+  // }, [])
 
   const changeViewBTN = (e) => {
     e.preventDefault();

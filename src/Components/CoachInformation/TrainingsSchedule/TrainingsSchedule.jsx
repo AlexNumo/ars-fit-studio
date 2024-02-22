@@ -22,9 +22,14 @@ const TrainingsSchedule = () => {
   const [visitTrainingMap, setVisitTrainingMap] = useState({});
   const [cancelVisitTrainingMap, setCancelVisitTrainingMap] = useState({});
   const linkInstagram = 'https://www.instagram.com/';
+  // const [trainingsToday, setTrainingsToday] = useState([]);
+  // const [trainingsTomorrow, setTrainingsTomorrow] = useState([]);
+  // const [allNameUsers, setAllNameUsers] = useState([]);
 
   const getTrainingsCoach = async (labelAuth) => {
-    return await clientAPI.OnGetCoachTrainings(labelAuth)
+    const date = new Date();
+    // console.log(date)
+    return await clientAPI.OnGetCoachTrainings(labelAuth, date)
   };
   
   useEffect(() => {
@@ -46,77 +51,38 @@ const TrainingsSchedule = () => {
 
   useEffect(() => {
     if (dataTrainings) {
-      const allTrainings = dataTrainings.reduce((acc, item) => {
-        return [...acc, ...item.trainings];
-      }, []);
-
+      const allTrainings = dataTrainings.flat();
+      
       const filteredTrainingsToday = allTrainings.filter(training => training.date.slice(0, 10) === formattedDate);
       const filteredTrainingsTomorrow = allTrainings.filter(training => training.date.slice(0, 10) === tomorrowFormattedDate);
-
       const uniqueTimesToday = [...new Set(filteredTrainingsToday.map(training => training.time))];
       const uniqueTimesTomorrow = [...new Set(filteredTrainingsTomorrow.map(training => training.time))];
 
-      const uniqueKindTrainingsToday = [...new Set(filteredTrainingsToday.map(training => training.kind_training))];
-      const uniqueKindTrainingsTomorrow = [...new Set(filteredTrainingsTomorrow.map(training => training.kind_training))];
-
-      const newDataToday = uniqueTimesToday.flatMap(time => {
-        return uniqueKindTrainingsToday.map(kind_training => {
-          const usersInformation = {};
-          filteredTrainingsToday.forEach(training => {
-            if (training.time === time && training.kind_training === kind_training) {
-              const foundDataTraining = dataTrainings.find(items => items.trainings.find(item => item._id === training._id));
-              if (foundDataTraining) {
-                usersInformation[training._id] = {
-                  name: foundDataTraining.name,
-                  surname: foundDataTraining.surname,
-                  instagram: foundDataTraining.instagram,
-                  trainingID: training._id,
-                  time: time,
-                  kind_training: kind_training,
-                  seasonTicketID: training.seasonTicketsID,
-                  visitTraining: training.visitTraining,
-                  canceledTraining: training.canceledTraining,
-                };
-              }
-            }
-          });
+      const newDataArrayToday = uniqueTimesToday.map(time => {
+          const trainingsForTime = filteredTrainingsToday.filter(training => training.time === time);
+          const uniqueKindTrainingsForTime = [...new Set(trainingsForTime.map(training => training.kind_training))];
           return {
-            usersInformation
+              time: time,
+              users: trainingsForTime,
+              kind_training: uniqueKindTrainingsForTime
           };
-        });
       });
 
-      const newDataTomorrow = uniqueTimesTomorrow.flatMap(time => {
-        return uniqueKindTrainingsTomorrow.map(kind_training => {
-          const usersInformation = {};
-          filteredTrainingsTomorrow.forEach(training => {
-            if (training.time === time && training.kind_training === kind_training) {
-              const foundDataTraining = dataTrainings.find(items => items.trainings.find(item => item._id === training._id));
-              if (foundDataTraining) {
-                usersInformation[training._id] = {
-                  name: foundDataTraining.name,
-                  surname: foundDataTraining.surname,
-                  instagram: foundDataTraining.instagram,
-                  trainingID: training._id,
-                  time: time,
-                  kind_training: kind_training,
-                  seasonTicketID: training.seasonTicketsID,
-                  visitTraining: training.visitTraining,
-                  canceledTraining: training.canceledTraining,
-                };
-              }
-            }
-          });
+      const newDataArrayTomorrow = uniqueTimesTomorrow.map(time => {
+          const trainingsForTime = filteredTrainingsTomorrow.filter(training => training.time === time);
+          const uniqueKindTrainingsForTime = [...new Set(trainingsForTime.map(training => training.kind_training))];
           return {
-            usersInformation
+              time: time,
+              users: trainingsForTime,
+              kind_training: uniqueKindTrainingsForTime
           };
-        });
       });
-
-      setDataTrainingsToday(newDataToday);
-      setDataTrainingsTomorrow(newDataTomorrow);
+      setDataTrainingsToday(newDataArrayToday);
+      setDataTrainingsTomorrow(newDataArrayTomorrow);
+      return;
     }
   }, [dataTrainings, formattedDate, tomorrowFormattedDate]);
+
 
   // console.log("dataTrainingsToday: ", dataTrainingsToday);
 
@@ -125,7 +91,7 @@ const TrainingsSchedule = () => {
     const dataVisitTraining = {
       trainingID: trainingID,
       visit: visit,
-      seasonTicketID: seasonTicketID,
+      seasonTicketID: seasonTicketID ? seasonTicketID : 'one-time-class',
     }
     const sendVisitRequest = await clientAPI.OnSendVisitTraining(dataVisitTraining);
     if (sendVisitRequest === "Підтверджено тренування") {
@@ -139,7 +105,7 @@ const TrainingsSchedule = () => {
     return sendVisitRequest;
   };
 
-  // console.log("visitTrainingMap: ", visitTrainingMap);
+  // console.log("dataTrainings: ", dataTrainings);
 
   // console.log("cancelVisitTrainingMap: ", cancelVisitTrainingMap);
 
@@ -149,49 +115,73 @@ const TrainingsSchedule = () => {
       <WrapperInformation>
       <div>
         <p>На сьогодні</p>
-        {Object.values(dataTrainingsToday).map((dayTrainings, outerIndex) => (
-          <WrapperRecords key={outerIndex}>
-            {Object.values(dayTrainings.usersInformation).map((userData, index) => (
-              <div key={userData.trainingID}>
-                {index === 0 && (
-                  <p><NameTraining>{userData.kind_training} <br/>({userData.time})</NameTraining> </p>
-                )}
+          {dataTrainingsToday.map((trainingInfo, index) => (
+            <WrapperRecords key={index}>
+              <p><NameTraining>{trainingInfo.kind_training[0]} <br />({trainingInfo.time})</NameTraining> </p>
+              {trainingInfo.users.map((user) => (
                 <WrapperUsersName
-                  id={userData.trainingID}
+                  key={user.idTraining}
                   className={`
-                    ${userData.visitTraining || visitTrainingMap[userData.trainingID] ? 'visited' : ''} 
-                    ${userData.canceledTraining || cancelVisitTrainingMap[userData.trainingID] ? 'canceled' : ''}`}
+                    ${user.visitTraining || visitTrainingMap[user.idTraining] ? 'visited' : ''}
+                    ${user.canceledTraining || cancelVisitTrainingMap[user.idTraining] ? 'canceled' : ''}`}
                 >
                   <FcCheckmark
-                    onClick={(e) => handleCheckVisit(e, userData.trainingID, userData.seasonTicketID, 'true')} />
-                  <a
-                    href={linkInstagram + userData.instagram}
+                    onClick={(e) => handleCheckVisit(e, user.idTraining, user.seasonTicketID, true)} />
+                  {user.instagram === '-'
+                    ?
+                    <p>{user.name} {user.surname === '-' ? '' : user.surname}</p>
+                    :
+                    <a
+                    href={linkInstagram + user.instagram}
                     target="_blank"
-                    rel="noopener noreferrer">
-                    {userData.name} {userData.surname === '-' ? '' : userData.surname}</a>
+                    rel="noopener noreferrer"
+                  >
+                    {user.name} {user.surname === '-' ? '' : user.surname}
+                  </a>  
+                  }
                   <IoIosClose
-                    onClick={(e) => handleCheckVisit(e, userData.trainingID, userData.seasonTicketID, 'false')}
-                    color='red'/>
+                    onClick={(e) => handleCheckVisit(e, user.idTraining, user.seasonTicketID, false)}
+                    color='red'
+                  />
                 </WrapperUsersName>
-              </div>
-            ))}
-          </WrapperRecords>
-        ))}
+              ))}
+            </WrapperRecords>
+          ))}
       </div>
       <div>
         <p>На завтра</p>
-        {Object.values(dataTrainingsTomorrow).map((dayTrainings, outerIndex) => (
-          <WrapperRecords key={outerIndex}>
-            {Object.values(dayTrainings.usersInformation).map((userData, innerIndex) => (
-              <div key={innerIndex}>
-                  {innerIndex === 0 && (
-                    <p><NameTraining>{userData.kind_training} <br/>({userData.time})</NameTraining> </p>
-                  )}
-                  <p>{userData.name}</p>
-              </div>
-            ))}
-          </WrapperRecords>
-        ))}
+        {dataTrainingsTomorrow.map((trainingInfo, index) => (
+            <WrapperRecords key={index}>
+              <p><NameTraining>{trainingInfo.kind_training[0]} <br />({trainingInfo.time})</NameTraining> </p>
+              {trainingInfo.users.map((user, innerIndex) => (
+                <WrapperUsersName
+                  key={user.idTraining}
+                  className={`
+                    ${user.visitTraining || visitTrainingMap[user.idTraining] ? 'visited' : ''}
+                    ${user.canceledTraining || cancelVisitTrainingMap[user.idTraining] ? 'canceled' : ''}`}
+                >
+                  <FcCheckmark
+                    onClick={(e) => handleCheckVisit(e, user.idTraining, user.seasonTicketID, true)} />
+                  {user.instagram === '-'
+                    ?
+                    <p>{user.name} {user.surname === '-' ? '' : user.surname}</p>
+                    :
+                    <a
+                    href={linkInstagram + user.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {user.name} {user.surname === '-' ? '' : user.surname}
+                  </a>  
+                  }
+                  <IoIosClose
+                    onClick={(e) => handleCheckVisit(e, user.idTraining, user.seasonTicketID, false)}
+                    color='red'
+                  />
+                </WrapperUsersName>
+              ))}
+            </WrapperRecords>
+          ))}
       </div>
       </WrapperInformation>
     </WrapperInfoSlider>

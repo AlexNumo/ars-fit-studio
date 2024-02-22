@@ -36,3 +36,14 @@ export const ChooseBTN = styled.button`
   margin: 3px;
   background-color: #a29090;
 `;
+
+export const WrapperCoachTrainings = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid;
+  border-radius: 12px;
+  margin: 5px;
+  padding: 5px;
+`;

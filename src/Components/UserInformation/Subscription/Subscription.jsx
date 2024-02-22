@@ -31,7 +31,7 @@ const Subscription = () => {
   // }
 
   const endSubscriptionDate = (inputDate) => {
-    if (inputDate.length === 0) { 
+    if (!inputDate) { 
       return null;
     }
     const dateArray = inputDate.split('T');

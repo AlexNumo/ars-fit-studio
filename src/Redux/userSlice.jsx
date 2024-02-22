@@ -55,6 +55,7 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       const user = action.payload;
+      // console.log(user)
       state.id = user?._id || user?.id;
       state.access = user?.access || 'client';
       state.labelAuth = user?.labelAuth || '-';
@@ -68,33 +69,47 @@ const userSlice = createSlice({
       state.instagram = user?.instagram || '@';
       state.updateUser = user?.updateUser || false;
 
-      // state.seasonTickets = user?.seasonTickets || 'Відсутні дані'; 
-      // state.seasonTickets.id = user?.seasonTickets[user.seasonTickets.length - 1].id || 'Відсутні дані';
-      state.seasonTickets.name = user?.seasonTickets[user.seasonTickets.length - 1]?.name || 'Відсутні дані';
-      state.seasonTickets.limitOfTrainings = user?.seasonTickets[user.seasonTickets.length - 1]?.limitOfTrainings || 'Відсутні дані';
-      state.seasonTickets.remainderOfTrainings = user?.seasonTickets[user.seasonTickets.length - 1]?.remainderOfTrainings;
-      state.seasonTickets.price = user?.seasonTickets[user.seasonTickets.length - 1]?.price || 'Відсутні дані';
-      state.seasonTickets.kind = user?.seasonTickets[user.seasonTickets.length - 1]?.kind || 'Відсутні дані';
-      state.seasonTickets.includes = user?.seasonTickets[user.seasonTickets.length - 1]?.includes || 'Відсутні дані';
-
-      // state.seasonTickets.includes = user?.seasonTickets[user.seasonTickets.length - 1].includes || 'Відсутні дані';
-      // // if (user?.seasonTickets?.includes !== undefined) {
-      // //   state.seasonTickets.includes = null;
-      // // }
-
-      state.seasonTickets.dateOfBuying = user?.seasonTickets[user.seasonTickets.length - 1]?.dateOfBuying || '';
-      state.seasonTickets.dateChoose = user?.seasonTickets[user.seasonTickets.length - 1]?.dateChoose || 'Відсутні дані';
-      state.seasonTickets.confirmation = user?.seasonTickets[user.seasonTickets.length - 1]?.confirmation || false;
-      state.seasonTickets.infoTrainings = user?.seasonTickets[user.seasonTickets.length - 1]?.infoTrainings || 'Відсутні дані';
-      state.seasonTickets.useTicketsOnTrainings = user?.seasonTickets[user.seasonTickets.length - 1]?.infoTrainings || 'Відсутні дані';
-      state.seasonTickets.allUnique = user?.seasonTickets[user.seasonTickets.length - 1]?.infoTrainings ? countUniqueTrainingsSubscription(user.seasonTickets[user.seasonTickets.length - 1].infoTrainings) : 'Відсутні дані';
+      state.seasonTickets.name = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].name
+        : 'Відсутні дані';
+      state.seasonTickets.limitOfTrainings = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].limitOfTrainings
+        : 'Відсутні дані';
+      state.seasonTickets.remainderOfTrainings = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].remainderOfTrainings
+        : 'Відсутні дані';
+      state.seasonTickets.price = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].price
+        : 'Відсутні дані';
+      state.seasonTickets.kind = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].kind
+        : 'Відсутні дані';
+      state.seasonTickets.includes = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].includes
+        : 'Відсутні дані';      
+      state.seasonTickets.dateOfBuying = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].dateOfBuying
+        : '';
+      state.seasonTickets.dateChoose = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].dateChoose
+        : 'Відсутні дані';
+      state.seasonTickets.confirmation = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].confirmation
+        : false;
+      state.seasonTickets.infoTrainings = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].infoTrainings
+        : 'Відсутні дані';
+      state.seasonTickets.infoTrainings = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? user.seasonTickets[user.seasonTickets.length - 1].infoTrainings
+        : 'Відсутні дані';
+      state.seasonTickets.allUnique = user && user.seasonTickets && user.seasonTickets.length > 0
+        ? countUniqueTrainingsSubscription(user.seasonTickets[user.seasonTickets.length - 1].infoTrainings)
+        : 'Відсутні дані';
+      
       state.telegramBot.phoneNumber = user?.telegramBot?.phoneNumber || 'Відсутні дані';
       state.telegramBot.isTrainingReminderSent = user?.telegramBot?.phoneNumber?.length > 0 ? true : false;
       
       state.trainings.visit = user?.trainings?.length > 0 ? filterVisitTrainings(user.trainings) : state.trainings.visit;
-
-      // state.seasonTickets.allUnique = countUniqueTrainingsSubscription(state.trainings.visit) || 'Відсутні дані';
-      
       state.trainings.nonVisit = user?.trainings?.length ? filterNonVisitTrainings(user.trainings) : 0;
       state.trainings.all = user?.trainings || 0;
       state.trainings.allUnique = user?.trainings?.length > 0 ? countUniqueTrainings(user.trainings) : 0;

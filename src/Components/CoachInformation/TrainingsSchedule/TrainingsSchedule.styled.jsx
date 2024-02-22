@@ -23,6 +23,7 @@ export const WrapperRecords = styled.div`
   background-color: #d7d0d0;
   box-shadow: 0px 0px 12px 0px rgba(128, 0, 0, 1);
   padding: 4px;
+  width: 160px;
 `;
 
 export const NameTraining = styled.span`
@@ -34,9 +35,16 @@ export const WrapperUsersName = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border: 1px solid;
   border-radius: 12px;
   margin: 3px;
   padding: 2px;
+  p, a{
+    overflow: hidden;
+    /* padding: 0px 10px; */
+    width: 118px;
+    margin: 0 !important; 
+    /* white-space: nowrap; */
+  }
 `;

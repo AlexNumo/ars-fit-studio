@@ -131,7 +131,7 @@ const TrainingView = () => {
     setSelectDayData(scheduleByDay[selectDay]);
   }, [selectDay, scheduleByDay])
 
-  console.log(selectDayData);
+  // console.log(selectDayData);
 
   return (
     <>

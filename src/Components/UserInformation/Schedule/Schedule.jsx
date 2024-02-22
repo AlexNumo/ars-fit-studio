@@ -107,7 +107,7 @@ const Schedule = () => {
             <div key={time}>
               {scheduleToday[time] && scheduleToday[time].map((item, index) => (
                 <RecordBTN
-                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training, 'today')}
+                  onClick={() => handleRecordTraining(user.id, item.coach, item.time, item.day, item.kind_training, 'today')}
                   key={index}>
                   {item.kind_training !== '-' ? `${item.kind_training} ${item.time}` : item.kind_training}
                 </RecordBTN>
@@ -122,7 +122,7 @@ const Schedule = () => {
             <div key={time}>
               {scheduleTomorrow[time].map((item, index) => (
                 <RecordBTN
-                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training, 'tomorrow')}
+                  onClick={() => handleRecordTraining(user.id, item.coach, item.time, item.day, item.kind_training, 'tomorrow')}
                   key={index}>
                   {item.kind_training !== '-' ? `${item.kind_training} ${item.time}` : item.kind_training}
                 </RecordBTN>
@@ -136,7 +136,7 @@ const Schedule = () => {
             <div key={time}>
               {scheduleDayAfterTomorrow[time].map((item, index) => (
                 <RecordBTN
-                  onClick={() => handleRecordTraining(user.id, item.name_Coach, item.time, item.day, item.kind_training, 'aftertomorrow')}
+                  onClick={() => handleRecordTraining(user.id, item.coach, item.time, item.day, item.kind_training, 'aftertomorrow')}
                   key={index}>
                   {item.kind_training !== '-' ? `${item.kind_training} ${item.time}` : item.kind_training}
                 </RecordBTN>

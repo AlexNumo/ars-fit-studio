@@ -25,6 +25,20 @@ export const OnLogin = async (tel, password) => {
   }
 };
 
+export const OnAuth = async (token) => {
+  // console.log(token)
+  try {
+    const res = await serverAPI.post(`/user/auth`, {token});
+    // console.log(res.data);
+    // const name = res.data.name;
+    // toast.success(`${name}, Ви успішно увійшли`);
+    return res;
+  } catch (e) {
+    console.log("Error: ", e);
+    toast.error("Щось пішло не так");
+  }
+};
+
 export const OnRegistration = async (name, birthday, tel, password) => {
   try {
 
@@ -83,7 +97,7 @@ export const OnBuySeasonTicket = async (userData) => {
   // console.log(userData);
   try {
     const result = await serverAPI.post(`/seasonTickets`, userData);
-    console.log(result.data);
+    // console.log(result.data);
     return result.data;
   } catch (error) {
     toast.error('Упс, щось пішло не так');
@@ -126,7 +140,9 @@ export const OnRecordTraining = async (userData) => {
       return res;
     } else if (res.data.messages.error === 'Повторний запис на тренування') {
         toast.error('Повторний запис на тренування');
-      return res.data;
+    } else if (res.data.messages.warning === 'Ви не маєте абонементу. Запис на тренування без абонементу') {
+      toast.info('Ви не маєте абонементу. Запис на тренування без абонементу');
+      return res;
     } else {
         toast.success('Ви успішно записалися на тренування');
       return res;
@@ -137,12 +153,12 @@ export const OnRecordTraining = async (userData) => {
   }
 };
 
-export const OnGetCoachTrainings = async (coachLabel) => {
+export const OnGetCoachTrainings = async (coachLabel, date) => {
   // console.log(coachLabel);
   try {
-    const result = await serverAPI.post(`/user/coach`, {coachLabel});
+    const result = await serverAPI.post(`/user/coach`, {coachLabel, date});
     // console.log(coachLabel);
-    // console.log(result.data);
+    // console.log("result.data: ", result.data);
     return result.data;
   } catch (error) {
     toast.error('Упс, щось пішло не так');
@@ -151,15 +167,15 @@ export const OnGetCoachTrainings = async (coachLabel) => {
 };
 // OnSendVisitTraining
 export const OnSendVisitTraining = async (trainingInfo) => {
-  // console.log(trainingInfo);
+  console.log(trainingInfo);
   try {
     const result = await serverAPI.post(`/user/coach/visit`, trainingInfo);
-    console.log(result);
-    if (result.data) {
-      toast.info(result.data);
+    // console.log(result);
+    if (result.data.message.error) {
+      toast.info(result.data.message.error);
     }
     // console.log(result);
-    return result.data;
+    return result.data.message.error;
   } catch (error) {
     toast.error('Упс, щось пішло не так');
     console.error(error.message);
@@ -216,6 +232,17 @@ export const OnSeasonTicketConfirm = async (idSeasonTicket, idUser, selectedDate
      return toast.error(`${result.data.error}`);
     }
     toast.success(`${result.data}`);
+    return result.data;
+  } catch (error) {
+    toast.error('Упс, щось пішло не так');
+    console.error(error.message);
+  }
+};
+
+export const OnGetCoachTrainingsPeriod = async (coachInfo) => {
+  try {
+    const result = await serverAPI.put(`/user/coach/trainings`, coachInfo);
+    // console.log("result.data: ", result.data); 
     return result.data;
   } catch (error) {
     toast.error('Упс, щось пішло не так');
@@ -452,6 +479,7 @@ export const OnSeasonTicketConfirm = async (idSeasonTicket, idUser, selectedDate
 // };
 export const clientAPI = {
   OnLogin,
+  OnAuth,
   OnRegistration,
   OnUpgradeUser,
   OnUpgradeUserPassword,
@@ -466,6 +494,7 @@ export const clientAPI = {
   OnGetAllUsers,
   OnGetSeasonTicketsNotConfirm,
   OnSeasonTicketConfirm,
+  OnGetCoachTrainingsPeriod,
   // sendData,
   // getData,
   // getDataALL,
