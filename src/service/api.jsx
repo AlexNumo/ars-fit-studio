@@ -4,7 +4,8 @@ import axios from 'axios';
 const serverAPI = axios.create({
   // baseURL: 'https://sandra-back-render.onrender.com/',
   // baseURL: 'https://sandra-base.herokuapp.com/',
-  baseURL: 'https://ars-fit-studio-server.onrender.com',
+  baseURL: 'https://ars-fit-studio-server-97360ba5d151.herokuapp.com/',
+  // baseURL: 'https://ars-fit-studio-server.onrender.com',
 
 
   // baseURL: 'http://localhost:8080',
