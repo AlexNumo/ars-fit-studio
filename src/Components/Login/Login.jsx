@@ -29,8 +29,8 @@ const Login = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState('');
   const [birthday, setBirthday] = useState('');
-  const [email, setEmail] = useState("+380981058240");
-  const [password, setPassword] = useState("74Omevet");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   // const user = useSelector((state) => state.user);
   const navigate = useNavigate ();
